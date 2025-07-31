@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erosia</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="home-images/erosia_logo_32x32_8bit.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+
+  <style>
+
+    
+    :root {
+      --naranja: #f59e0b;
+      --morado: #6b21a8;
+      --claro: #fff7f1;
+      --oscuro: #2d0c3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--claro);
+      color: #333;
+    }
+
+    nav {
+      background: linear-gradient(120deg, var(--oscuro), var(--morado));
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #f8f8f8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: var(--naranja);
+    }
+
+    header {
+       background: linear-gradient(120deg, #fa709a, #fee140);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+      border-bottom: 5px solid #fdbb2d;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+
+    header p {
+      font-size: 1.3rem;
+    }
+       .carousel-container {
+      position: relative;
+      max-width: 900px;
+      height: 500px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+        .carousel-container {
+      position: relative;
+      max-width: 900px;
+      height: 500px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .controls span {
+      pointer-events: auto;
+      font-size: 2rem;
+      color: white;
+      background: rgba(0,0,0,0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .controls span:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    .card:hover {
+  background-color: #ffe0e0;
+}
+
+.card .info {
+  margin-top: 10px;
+  display: none;
+  font-size: 14px;
+  color: #444;
+}
+
+   
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #ffffff;
+    }
+
+    nav img {
+      height: 50px;
+    }
+
+    .testimonios {
+      padding: 2rem;
+      background: #ffffff;
+    }
+
+    .testimonios h2 {
+      text-align: center;
+      color: #b81c6d;
+      margin-bottom: 1rem;
+    }
+
+    .testimonios .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+    .info-extra {
+      background: linear-gradient(to right, #6e1b4e, #300b3c);
+      color: #f8f8f8;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .info-extra h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fdd9ec;
+    }
+
+    .info-extra p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info-extra .links {
+      margin-top: 1rem;
+    }
+
+    .info-extra a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #470672;
+      font-size: 0.9rem;
+      color: #dbdbdb;
+      border-top: 1px solid #ffc0cb;
+    }
+
+    .info-extra {
+  background: linear-gradient(120deg, #fa709a, #fee140);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 4px solid #000000;
+}
+
+.info-extra h2 {
+  color: #221b1e;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.info-extra p {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+.info-lista {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.info-lista li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #555;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-lista li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #ff69b4;
+}
+
+.links {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.links a {
+  text-decoration: none;
+  background: #000000;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.links a:hover {
+  background: #c94f7c;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fa fa-home"></i> Inicio</a></li>
+      <li><a href="Psicologia.html"><i class="fa fa-brain"></i> Psicología</a></li>
+      <li><a href="Sexualidad.html"><i class="fa fa-heart"></i> Sexualidad</a></li>
+      <li><a href="contacto.html"><i class="fa fa-envelope"></i> Contacto</a></li>
+      <li><a href="inicio De Sesion.html"><i class="fa fa-user"></i> Iniciar Sesión</a></li>
+    </ul>
+  </nav>
+
+  <header class="sexualidad-header">
+  <h1>❤️ EROSIA</h1>
+  <p>Infórmación a tu alcance.</p>
+</header>
+
+
+<section>
+  <div class="carousel-container">
+    <div class="slides">
+      <div class="slide"><img src="home-images/slide1.jpeg" alt="Slide 1"></div>
+      <div class="slide"><img src="home-images/imagen2.jpeg" alt="Slide 2"></div>
+      <div class="slide"><img src="home-images/imagen3.jpeg" alt="Slide 3"></div>
+      <div class="slide"><img src="home-images/imagen4.jpeg" alt="Slide 4"></div>
+    </div>
+    <div class="controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </div>
+  <section class="mental-health">
+ 
+
+  <!-- Sección de testimonios -->
+  <section class="testimonial-section">
+    <center><h2>Testimonios</h2></center>
+    <div class="container-testimonials">
+      <div class="testimonial-card">
+        <img src="home-images/hero.jpg" alt="Persona 1" />
+        <h4 class="q-head">Nikol Dahiana</h4>
+        <p>El contenido es increíble, me ayudó a entender mucho sobre temas importantes. ¡Gracias por tanto!</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="home-images/hero.jpg" alt="Persona 2" />
+        <h4 class="q-head">Josue Cordoba</h4>
+        <p>Una experiencia educativa maravillosa. Siento que ahora tengo más herramientas para la vida.</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="home-images/hero.jpg" alt="Persona 3" />
+        <h4 class="q-head">Salome Quiñones</h4>
+        <p>Me encantó el enfoque amigable y profesional con el que se abordan temas tan importantes.</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="home-images/hero.jpg" alt="Persona 4" />
+        <h4 class="q-head">Sebastian ospina</h4>
+        <p>Recomiendo este espacio a todos los jóvenes. La información es clara, actualizada y útil.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Scripts -->
+  <script>
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+
+    function updateSlide(index) {
+      currentIndex = index;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => updateSlide(i));
+    });
+
+    // Auto deslizamiento
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlide(currentIndex);
+    }, 5000);
+  </script>
+</body>
+
+  <section class="info-extra">
+  <h2>¿Por qué elegirnos?</h2>
+  <p>
+    En nuestra plataforma encontrarás un espacio seguro, confiable y lleno de empatía. Estamos comprometidos con ofrecer información actualizada, accesible y validada por expertos en psicología, salud y sexualidad. 
+    Nos apasiona acompañarte en tu proceso de aprendizaje, autocuidado y desarrollo personal.
+  </p>
+
+  <h2>¿Qué encontrarás aquí?</h2>
+  <ul class="info-lista">
+    <li>🌸 Artículos y guías educativas en lenguaje claro y comprensible.</li>
+    <li>💬 Atención personalizada por profesionales especializados.</li>
+    <li>📚 Recursos descargables, infografías y ejercicios prácticos.</li>
+    <li>🤝 Comunidad de apoyo empática y sin prejuicios.</li>
+  </ul>
+
+  <h2>Nuestros Servicios</h2>
+  <ul class="info-lista">
+    <li>🧠 Asesoramiento psicológico.</li>
+    <li>❤️ Educación sexual integral.</li>
+    <li>📦 Recomendaciones y catálogo de productos de cuidado personal.</li>
+    <li>📞 Canales de contacto directo con especialistas.</li>
+  </ul>
+
+  <h2>Nuestra Misión</h2>
+  <p>
+    Fomentar una educación integral en sexualidad y salud mental con una visión inclusiva, confiable y transformadora, ayudando a derribar mitos y barreras que afectan el bienestar emocional y físico.
+  </p>
+
+  <h2>Nuestra Visión</h2>
+  <p>
+    Ser la plataforma educativa de referencia en el mundo hispano, donde cada persona encuentre acompañamiento, información útil y herramientas para vivir en plenitud y con conocimiento.
+  </p>
+
+  <div class="links">
+    <a href="#">📖 Guías</a>
+    <a href="#">📰 Blog</a>
+    <a href="#">🤝 Atención Personalizada</a>
+    <a href="#">🧰 Recursos</a>
+  </div>
+</section>
+
+
+  <script>
+    const frases = [
+      "Tu bienestar emocional es importante.",
+      "Infórmate, cuida y ama tu cuerpo.",
+      "La educación sexual es libertad.",
+      "Estamos aquí para escucharte y apoyarte."
+    ];
+    let index = 0;
+    const contenedor = document.getElementById("frase-dinamica");
+
+    function cambiarFrase() {
+      contenedor.textContent = frases[index];
+      index = (index + 1) % frases.length;
+    }
+
+    cambiarFrase();
+    setInterval(cambiarFrase, 5000);
+  </script>
+</body>
+</html>
+<footer>
+  <p>
+    &copy; 2025 <strong>Educación Sexual y Psicología</strong> — Promoviendo el conocimiento con respeto y empatía 💡💖<br>
+    Todos los derechos reservados.
+  </p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.twitter.com" target="_blank" title="X/Twitter"><i class="fa fa-twitter"></i></a>
+    <a href="mailto:contacto@educacionpsicosexual.com" title="Correo"><i class="fa fa-envelope"></i></a>
+  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</footer>
+</html>
+
